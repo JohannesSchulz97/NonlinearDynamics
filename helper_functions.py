@@ -1,0 +1,13 @@
+import numpy as np
+
+def logistic_map(x0, r, n):
+    x = x0
+    xs = [x0]
+    while n>0:
+        x = logistic_iterator(x,r)
+        xs.append(x)
+        n -= 1
+    return np.array(xs)
+
+def logistic_iterator(x, r):
+    return r * x * (1-x)
